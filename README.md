@@ -1,7 +1,9 @@
 # CodeAlpha_Voting-System-Smart-Contract
-Source Code- // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-contract PollingSystem {
+Source Code- 
+
+    // SPDX-License-Identifier: MIT
+     pragma solidity ^0.8.0;
+    contract PollingSystem {
     struct Poll {
         string title;
         string[] options;
@@ -10,7 +12,7 @@ contract PollingSystem {
         mapping(address => bool) hasVoted; 
         bool exists;
     }
-
+    
     uint public pollCount;
     mapping(uint => Poll) public polls;
     event PollCreated(uint pollId, string title, uint endTime);
@@ -62,6 +64,6 @@ contract PollingSystem {
                 highestVotes = poll.voteCounts[i];
                 winningOptionIndex = i;
             }
-        }
+         }
+      }
     }
-}
